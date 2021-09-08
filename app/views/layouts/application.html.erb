@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Game <span class="text-danger">Store</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto ">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+         
+          <%= link_to 'Empleados', employes_path, class: 'nav-link'%> 
+        </li>
+        <li class="nav-item">
+         <%= link_to 'Clientes', customers_path, class: 'nav-link'%> 
+        </li>
+        <li class="nav-item">
+         <%= link_to 'Productos', products_path, class: 'nav-link'%> 
+        </li>
+       
+      </ul>
+      <ul class="navbar-nav ">
+      <% if Current.user %>
+      <li class="nav-item">
+       <strong class="nav-link">Bienvendido: <%= Current.user.email %></strong> 
+      </li> 
+       <li class="nav-item">
+         
+          <%= link_to 'Cerrar Sesion', logout_path, method: :delete, class: 'nav-link'%> 
+        </li>
+        <% else %>
+         <li class="nav-item">
+         
+          <%= link_to 'Login', sign_in_path, class: 'nav-link'%> 
+        </li>
+         <li class="nav-item">
+         
+          <%= link_to 'Registro', sign_up_path, class: 'nav-link'%> 
+        </li>  
+         <%end%> 
+            </ul> 
+    </div>
+  </div>
+</nav>
+    <%= yield %>
+     <%if notice.present?%>
+    <script type="text/javascript">
+      
+      Swal.fire(
+  'Correcto!',
+  '<%=notice%>',
+  'success'
+)
+    </script>
+  <%end%> 
+     <%if alert.present?%>
+    <script type="text/javascript">
+      
+      Swal.fire(
+  'Oops!',
+  '<%=alert%>',
+  'error'
+)
+    </script>
+  <%end%> 
+  </body>
+</html>

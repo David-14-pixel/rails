@@ -1,0 +1,37 @@
+<% @title="Productos" %>
+<div class="container">
+
+
+<h1 class="text-center">Productos</h1>
+<%= link_to 'Nuevo Producto', new_product_path, class:'btn btn-info text-white' %>
+<table class="table table-borderlesss">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Estado</th>
+     
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.stock %></td>
+        <td><%= product.price %></td>
+        <td><%= product.state== true ? 'Activo': 'Inactivo' %></td>
+        <td><%= link_to 'Detalle', product, class: 'btn btn-info text-white' %></td>
+        <td><%= link_to 'Editar', edit_product_path(product), class: 'btn btn-warning text-white'  %></td>
+        <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white'  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+</div>

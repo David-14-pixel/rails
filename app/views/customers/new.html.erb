@@ -1,0 +1,16 @@
+<% @title="Clientes" %>
+<div class="container mt-4 ">
+<div class="row">
+<div class="col-8">
+
+<div class="card-header bg-info ">
+<h3 class=" text-white text-center">Nuevo Cliente</h3>
+</div>
+</div>
+</div>
+</div>
+
+<%= render 'form', customer: @customer %>
+<div class="container">
+<%= link_to 'Back', customers_path, class: 'ms-3 btn btn-danger' %>
+</div>

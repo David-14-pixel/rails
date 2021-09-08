@@ -1,0 +1,40 @@
+<% @title="Clientes" %>
+<div class="container">
+
+
+<h1 class="text-center">Clientes</h1>
+<%= link_to 'Nuevo Cliente', new_customer_path, class:'btn btn-info text-white btn-se' %>
+<%= link_to 'Pdf', customers_path(format: :pdf), class: 'btn btn-info text-white btn-se' %>
+<table class="table table-borderlesss">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido(s)</th>
+      <th>Telefono</th>
+      <th>Direccion</th>
+      <th>Estado</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.last_name %></td>
+        <td><%= customer.telephone %></td>
+        <td><%= customer.address %></td>
+        <td><%= customer.state== true ? 'Activo': 'Inactivo' %></td>
+        <td><%= link_to 'Pdf', customer_path(customer, format: :pdf), class: 'btn btn-info text-white btn-se' %></td>
+        <td><%= link_to 'Detalle', customer, class: 'btn btn-info text-white btn-se' %></td>
+        <td><%= link_to 'Editar', edit_customer_path(customer), class: 'btn btn-warning text-white btn-se'  %></td>
+        <td><%= link_to 'Eliminar', customer, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger text-white btn-se'  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+</div>

@@ -1,0 +1,43 @@
+<% @title="Registro" %>
+<div class="container my-5">
+<div class="row justify-content-center align-items-center">
+<div class="col-6">
+<div class="card">
+<div class="card-header bg-info text-white text-center">
+<h2>Registrarse</h2>
+</div>
+<div class="card-body">
+
+   <%= form_with model: @user, url: sign_up_path do |f| %>
+ 
+    <p class="input-group mb-3">
+    <%= f.label 'email', class: 'input-group-text' %><br>
+    <%= f.text_field :email, class: 'form-control' %>
+    </p>
+    <p class="input-group mb-3">
+    <%= f.label 'password', class: 'input-group-text' %><br>
+    <%= f.password_field :password, class: 'form-control' %>
+    </p>
+    <p class="input-group mb-3">
+    <%= f.label 'password_confirmation', class: 'input-group-text' %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+    </p>
+  
+  
+
+       <div class="d-grid">
+         <%= f.submit 'Registrarse', class: 'btn btn-info text-white d-block'  %>
+         </div>
+    
+    <%end%>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+ 
+
+
+<!-- Modal -->

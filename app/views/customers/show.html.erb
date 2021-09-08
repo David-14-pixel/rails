@@ -1,0 +1,45 @@
+<% @title="Clientes" %>
+<div class="container my-4">
+<div class="row">
+<div class="col-8">
+<div class="card">
+<div class="card-header bg-info">
+<h3 class=" text-white text-center">Detalle al cliente <%=@customer.id%></h3>
+</div>
+<div class="card-body">
+
+
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @customer.last_name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @customer.telephone %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @customer.address %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @customer.state %>
+</p>
+
+
+<%= link_to 'Editar', edit_customer_path(@customer), class: 'btn btn-warning text-white' %> |
+<%= link_to 'Volver', customers_path, class: 'btn btn-danger text-white' %>
+</div>
+</div>
+</div>
+</div>
+</div>

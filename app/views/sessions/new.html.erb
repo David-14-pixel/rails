@@ -1,0 +1,27 @@
+<% @title="Inicio Sesion" %>
+<div class="container my-5">
+<div class="row justify-content-center align-items-center">
+<div class="col-6">
+<div class="card">
+<div class="card-header bg-info text-white text-center">
+<h2>Inicio de sesion</h2>
+</div>
+<div class="card-body">
+  <%= form_with url: sign_in_path do |f| %>
+    <p class="input-group mb-3">
+    <%= f.label 'email:', class: 'input-group-text'%><br>
+    <%= f.text_field :email, id: 'email', class: 'form-control' %>
+    </p>
+    <p class="input-group mb-3">
+    <%= f.label 'password:', class: 'input-group-text'%><br>
+    <%= f.password_field :password, id: 'password', class: 'form-control' %>
+    </p>
+    <p class="d-grid">
+    <%= f.submit 'Log In', class: 'btn btn-info text-white'%>
+    </p>
+  <% end %>
+  </div>
+    </div>
+      </div>
+        </div>
+          </div>

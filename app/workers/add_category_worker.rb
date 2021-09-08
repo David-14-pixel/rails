@@ -1,0 +1,11 @@
+class AddCategoryWorker
+    require 'csv'
+    include Sidekiq::Worker
+    sidekiq_options retry: false
+
+    def perform(csv_file)
+        CSV.foreach(csv_file, headers: true) do |shark|
+        Category.create(name: shark[0])
+      end
+     end
+end
