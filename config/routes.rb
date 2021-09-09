@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
 
- 
+ root 'home#home'
   resources :products
   resources :employes
   resources :customers
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create', as: 'log_in'
   delete 'logout', to: 'sessions#destroy'
-  get 'categories/index', to: 'categories#ibdex'
+  get 'categories/index', to: 'categories#index'
   get 'categories/data', to: 'categories#data'
   post 'categories/upload', to: 'categories#upload'
   post 'categories/destroy', to: 'categories#destroy'

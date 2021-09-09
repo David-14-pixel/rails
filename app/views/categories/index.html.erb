@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Categorias  </h1>
+
+
+<br>
+
+  <%= form_tag categories_upload_path do %>
+  <%= submit_tag "Importar categorias" %>
+  <% end %>
+
+  <br>
+
+<%= link_to 'Nueva categoria', new_customer_path, :class => "btn btn-primary btn-sm" %> 

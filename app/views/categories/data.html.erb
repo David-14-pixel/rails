@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Categorias</h1>
+
+
+<div class="table-responsive">
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |ca| %>
+      <tr>
+        <td><%= ca.name %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+  <%= form_tag categories_destroy_path do %>
+  <%= submit_tag "Delete Endangered Sharks" %>
+  <% end %>
+
+  <br>
+
+<%= link_to 'New Categorie', new_customer_path, :class => "btn btn-primary btn-sm" %> 

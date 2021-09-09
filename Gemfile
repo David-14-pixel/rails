@@ -33,6 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'sidekiq', '~>6.0.0'
+ 
 
 # Gema para pdf
 gem 'wicked_pdf'
