@@ -78,5 +78,28 @@
 )
     </script>
   <%end%> 
+  <script>
+$(document).ready(function() {
+	$("#empleado").validate({
+		rules: {
+			"employe[name]": { required: true, minlength: 3, maxlength: 15},
+			"employe[last_name]": { required:true, minlength: 3, maxlength: 15},
+			"employe[age]": { required:true, minlength: 3, maxlength: 15},
+		  "employe[telephone]": { required:true, minlength: 3},
+			"employe[salary]": { required:true,  maxlength: 15, minlength: 4},
+      "employe[cargo]": { required:true, minlength: 3, maxlength: 15},
+		},
+		messages: {
+			"employe[name]": {required:"El nombre es obligatorio.",minlength:"el nombre debe de tener un mínimo de 3 letras"},
+			"employe[last_name]": {required:"El campo es obligatorio."},
+			"employe[age]" : {required:"El campo es obligatorio."},
+			"employe[telephone]" : {required:"El campo es obligatorio."},
+		  "employe[cargo]" : {required:"El campo es obligatorio."},
+      "employe[salary]":{required:"El campo es obligatorio."},
+		}
+	});
+});
+
+</script>
   </body>
 </html>

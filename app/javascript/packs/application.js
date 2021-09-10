@@ -18,3 +18,10 @@ import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 window.Swal = Swal;
 
+var jQuery = require("jquery");
+
+global.$ = global.jQuery = jQuery;
+window.$ = window.jQuery = jQuery;
+
+import 'jquery-validation/dist/jquery.validate.min.js'
+

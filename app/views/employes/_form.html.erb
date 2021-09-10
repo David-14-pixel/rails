@@ -3,7 +3,7 @@
 <div class="col-8">
 <div class="card">
 <div class="card-body">
-<%= form_with(model: employe) do |form| %>
+<%= form_with(model: employe, id: "empleado") do |form| %>
 
 
   <% if employe.errors.any? %>
@@ -59,3 +59,4 @@
 </div>
 </div>
 </div>
+

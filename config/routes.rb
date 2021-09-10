@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
  
 
- root 'home#home'
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: "/sidekiq"
   resources :products
   resources :employes
   resources :customers
