@@ -18,6 +18,10 @@ class CustomersController < ApplicationController
       end
     end
   end
+  def getCustomer
+    @customers=Customer.where(id: params[:id]).all
+    render json:  @customers
+  end
 
   def new
     @customer=Customer.new

@@ -40,6 +40,14 @@ gem 'wicked_pdf'
 
 gem 'wkhtmltopdf-binary'
 
+# coffe script una version para rails de js
+
+gem 'coffee-rails'
+
+# jquery validate
+
+gem 'jquery-validation-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

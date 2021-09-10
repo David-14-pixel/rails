@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  
-
+  resources :sales
+  require 'sidekiq/web' 
+  mount Sidekiq::Web, at: "/sidekiq"
  root 'home#home'
   resources :products
   resources :employes
@@ -14,5 +16,6 @@ Rails.application.routes.draw do
   get 'categories/data', to: 'categories#data'
   post 'categories/upload', to: 'categories#upload'
   post 'categories/destroy', to: 'categories#destroy'
+  get 'get/customers/:id', to: 'customers#getCustomer'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

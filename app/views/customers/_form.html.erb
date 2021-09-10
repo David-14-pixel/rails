@@ -3,12 +3,12 @@
 <div class="col-8">
 <div class="card">
 <div class="card-body">
-<%= form_with(model: customer) do |form| %>
+<%= form_with(model: customer, id: 'customer') do |form| %>
 
 
   <% if customer.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(customer.errors.count, "error") %> prohibited this employe from being saved:</h2>
+      <h2><%= pluralize(customer.errors.count, "errores") %> prohibió que este cliente se guarde:</h2>
 
       <ul>
         <% customer.errors.each do |error| %>
@@ -17,11 +17,19 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="input-group mb-3">
+    <%= form.label :cedula, class: 'input-group-text' %>
+    <%= form.text_field :cedula, class: 'form-control' %>
+    
+  </div>
 
   <div class="input-group mb-3">
     <%= form.label :name, class: 'input-group-text' %>
     <%= form.text_field :name, class: 'form-control' %>
+    
   </div>
+ 
 
   <div class="input-group mb-3">
     <%= form.label :last_name, class: 'input-group-text' %>
@@ -30,7 +38,7 @@
 
   <div class="input-group mb-3">
     <%= form.label :telephone, class: 'input-group-text' %>
-    <%= form.number_field :telephone, class: 'form-control' %>
+    <%= form.text_field :telephone, class: 'form-control' %>
   </div>
 
   <div class="input-group mb-3">
@@ -53,3 +61,5 @@
 </div>
 </div>
 </div>
+
+

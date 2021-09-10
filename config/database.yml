@@ -1,8 +1,8 @@
  development:
   adapter: postgresql
-  database: p2
+  database: cobelen_local
   pool: 5
   timeout: 5000
   host: localhost
   user: postgres
-  password: c1234567+
+  password: root1

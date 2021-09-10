@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'sales' %>
   </head>
 
   <body>
@@ -78,5 +79,36 @@
 )
     </script>
   <%end%> 
+<button id="boton">Mostrar</button>
   </body>
 </html>
+<!--<script>
+$().ready(()=>{
+$.validator.addMethod("soloLetras", function (value, element) {
+    var pattern = /^[a-zA-Z ]+$/;
+    return this.optional(element) || pattern.test(value);
+  }, "");
+  $.validator.addMethod("soloNumeros", function (value, element) {
+    var pattern = /[0-9]+/;
+    return this.optional(element) || pattern.test(value);
+  }, "El campo solo debe contener numeros");
+   $("#customer").validate({
+     rules:{
+       "customer[name]": {required: true, soloLetras: true},
+       "customer[last_name]": {required: true, soloLetras: true},
+       "customer[telephone]": {required: true, soloNumeros: true, minlength: 7, maxlength: 10},
+       "customer[address]": {required: true}
+
+
+     },
+     messages:{
+       "customer[name]": {required: 'El campo nombre no puede estar vacio', soloLetras: 'El campo debe contener solo letras'},
+        "customer[last_name]": {required: 'El campo apellidos no puede estar vacio', soloLetras: 'El campo debe contener solo letras'},
+         "customer[telephone]": {required: 'El campo Telefono no puede estar vacio', soloNumeros: 'El campo debe contener solo numeros', minlength: 'El campo debe tener como minimo 7 numeros', maxlength: 'El campo  no puede tener mas de 10 numeros' },
+         "customer[address]": {required: "El campo direccion no puede estar vacio"}
+     }
+   });  
+})
+  
+ 
+</script>-->
